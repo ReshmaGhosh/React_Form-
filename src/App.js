@@ -1,5 +1,8 @@
 import logo from "./logo.svg";
 import "./App.css";
+import SearchForm from "./components/form/SearchForm";
+import UserInput from "./components/userInput/UserInput";
+import ProductList from "./components/product/ProductList";
 
 const productList = [
   {
@@ -113,6 +116,9 @@ function App() {
   return (
     <div className="App">
       <h1> React hook assignment </h1>
+      <SearchForm />
+      <UserInput />
+      <ProductList productarrey={productList} />
     </div>
   );
 }
