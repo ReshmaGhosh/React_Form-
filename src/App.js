@@ -1,7 +1,7 @@
-import logo from "./logo.svg";
 import "./App.css";
+import { useState } from "react";
+
 import SearchForm from "./components/form/SearchForm";
-import UserInput from "./components/userInput/UserInput";
 import ProductList from "./components/product/ProductList";
 
 const productList = [
@@ -113,12 +113,23 @@ const productList = [
   },
 ];
 function App() {
+  const [userInput, setUserInput] = useState("");
+  //logic
+
+  const result = productList.filter((productIteam) =>
+    productIteam.title.toLowerCase().includes(userInput.toLowerCase())
+  );
+  console.log(result, "result");
+
   return (
     <div className="App">
       <h1> React hook assignment </h1>
-      <SearchForm />
-      <UserInput />
-      <ProductList productarrey={productList} />
+      <SearchForm setUserInput={setUserInput} />
+      <ProductList
+        // productarrey={productList}
+        userInput={userInput}
+        result={result}
+      />
     </div>
   );
 }

@@ -1,12 +1,12 @@
 import React from "react";
 
-export default function ProductItem({ result }) {
-  console.log(result, "result");
+export default function ProductItem({ item }) {
+  console.log(item, "item");
   return (
     <div className="productItem">
-      <div>{result.title}</div>
-      <div>{result.price}</div>
-      <img src={result.image} alt={result.title} width="70px" />
+      <div>{item.title}</div>
+      <div>{item.price}</div>
+      <img src={item.image} alt={item.title} width="70px" />
     </div>
   );
 }
